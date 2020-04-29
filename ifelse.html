@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Javascript - If/Else</title>
+    <meta charset="UTF-8"/>
+</head>
+<body>
+    <script>
+        let accessAllowed;
+        let age = prompt("How old are you?", "");
+
+        if (age > 18) {
+            accessAllowed = true;
+        } else {
+            accessAllowed = false;
+        }
+        alert(accessAllowed);
+
+        let javaName = prompt("What is the \"official\" name of Javascript?");
+        let answer = "ECMAScript";
+        if (javaName == answer) {
+            alert("Right!");
+        } else {
+            alert ("Didn't know? \"ECMAScript\"!");
+        }
+
+        let number = prompt("Give me a number please!");
+        if (number > 0) {
+            alert(1);
+        } else if (number < 0) {
+            alert(-1);
+        } else {
+            alert(0);
+        }
+
+        let message = (login === 'Employee') ? 'Hello' :
+                      (login === 'Director') ? 'Greetings' :
+                      (login === '') ? 'No login' :
+                      '';
+    </script>
+</body>
+</html>
