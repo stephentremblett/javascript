@@ -23,6 +23,35 @@
         const actual = MAX - 13;
         let percentage = actual / MAX;
         output(percentage);
+
+        // Strings and stuff
+        let bigmouth = 'I\'ve got no right to take my place..'
+        output(bigmouth);
+
+        // Joining two strings together using 'joined'
+        let one = "Hey, ";
+        let two = "how are you??";
+        let joined = one + two;
+        output(joined);
+        let myDate = '19' + '67';
+        output(typeof myDate);
+
+        // Below a string of numbers becomes a number
+        let myString = '123';
+        let myNum = Number(myString);
+        output(typeof myNum);
+
+        // Taking numbers and turning into string
+        let myNum2 = 123;
+        let myString2 = myNum2.toString();
+        output(typeof myString2);
+
+        // Template literals
+        let song = 'Fight the Youth';
+        let score = 9;
+        let highestScore = 10;
+    let review = `I like the song "${song}". I gave it a score of ${score/highestScore * 100}%.`;
+        output(review);
     </script>
 </body>
 </html>
