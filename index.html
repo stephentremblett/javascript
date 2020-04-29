@@ -7,6 +7,7 @@
 <body>
     <script>
         // Variables and some great math
+        // let is the new var
         const output = console.log;
         let a = 10;
         let b = 7 * a;
@@ -19,6 +20,7 @@
         output(b);
 
         // Just more variables
+        // const is a variable that is set prior, think of it has hardcoded (like February is the 2nd month);
         const MAX = 57;
         const actual = MAX - 13;
         let percentage = actual / MAX;
@@ -50,8 +52,65 @@
         let song = 'Fight the Youth';
         let score = 9;
         let highestScore = 10;
-    let review = `I like the song "${song}". I gave it a score of ${score/highestScore * 100}%.`;
+        let review = `I like the song "${song}". I gave it a score of ${score/highestScore * 100}%.`;
         output(review);
+
+        // Fun stringy stuff
+        let text = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+        let textLength = text.length;
+        output(textLength);
+        let string = "Please locate where 'locate' occures!";
+        // indexOf() locations positions, starting from 0 (first character).
+        // In example below the first "locate" starts on the 7th character.
+        // lastIndexOf() looks for last instance
+        let stringLoca = string.indexOf("locate");
+        output(stringLoca);
+        let stringLocaLast = string.lastIndexOf("locate");
+        output(stringLocaLast);
+        // You can also start somewhere beyond the initial 0
+        let stringLocaMid = string.indexOf("locate", 15);
+        output(stringLocaMid);
+        // Search for a string in a string yo
+        let stringSearch = string.search("locate");
+        output(stringSearch);
+
+        // String extraction
+        // slice = start to end, positioning
+        // substring = start to end, no negative positioning
+        // substr = start, then length
+        let fruit = "Apple, Banana, Kiwi";
+        let fruitChop = fruit.slice(7,13);
+        let fruitHalfChop = fruit.slice(7);
+        output(fruitChop);
+        output(fruitHalfChop);
+
+        // String replacing
+        let microsoft = "Please visit Microsoft! I love Microsoft!";
+        let microsoftSwap = microsoft.replace("Microsoft","Apple");
+        output(microsoftSwap);
+        // using /TEXTHERE/i ignores case insensitivies
+        let microsoftSwapCap = microsoft.replace(/MIcrOsoFt/i, "Apple");
+        output(microsoftSwapCap);
+        // using /TEXTHERE/g will replace all instances
+        let microsoftAllSwap = microsoft.replace(/Microsoft/g, "Apple");
+        output(microsoftAllSwap);
+
+        // Upper and lower case
+        let microsoftCaps = microsoft.toUpperCase();
+        output(microsoftCaps);
+        let microsoftNoCaps = microsoft.toLowerCase();
+        output(microsoftNoCaps);
+
+        // Join two strings (different than using + operator);
+        let apple = "No, Apple is better!";
+        let joinUp = microsoft.concat(" ", apple);
+        output(joinUp);
+
+        // Tim that whitespace yo
+        let whiteSpace = "         Oh hello      ";
+        output(whiteSpace);
+        let trimWhiteSpace = whiteSpace.trim();
+        output(trimWhiteSpace);
     </script>
 </body>
 </html>
