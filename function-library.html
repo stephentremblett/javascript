@@ -8,14 +8,23 @@
       font-size: 2em;
       margin: 10px 1px 0;
     }
+    h3 {
+        margin:25px 0 0;
+    }
   </style>
 </head>
 <body>
 
+  <h3>Number input</h3>
   <input class="numberInput" type="text">
   <p></p>
 
+  <h3>Temperature input</h3>
+  <input class="tempInput" type="text">
+  <p class="tempText"></p>
+
   <script>
+    // Number math functions
     const input = document.querySelector('.numberInput');
     const para = document.querySelector('p');
     function squared(num) {
@@ -40,6 +49,22 @@
             para.textContent = num + ' squared is ' + squared(num) + '. ' +
                                num + ' cubed is ' + cubed(num) + '. ' +
                                num + ' factorial is ' + factorial(num) + '.';
+        }
+    }
+
+    // Lets do a weather app
+    // User submits a temparature
+    // Output is what season it is
+    const enterTemp = document.querySelector('.tempInput');
+    const text = document.querySelector('p.tempText');
+    enterTemp.onchange = function() {
+        const temp = enterTemp.value;
+        if (temp >= 15) {
+            text.textContent = 'Oh boy, you must be in Summer!';
+        } else if (temp <= 15 && temp >= 0) {
+            text.textContent = 'Looks like you are in Spring';
+        } else {
+            text.textContent = 'Winter, hunker down.';
         }
     }
   </script>
