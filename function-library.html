@@ -23,6 +23,10 @@
   <input class="tempInput" type="text">
   <p class="tempText"></p>
 
+  <h3>Favourite animal</h3>
+  <input class="animalInput" type="text">
+  <p class="animalText"></p>
+
   <script>
     // Number math functions
     const input = document.querySelector('.numberInput');
@@ -66,6 +70,16 @@
         } else {
             text.textContent = 'Winter, hunker down.';
         }
+    }
+
+    // Lets do a simple statement regarding favourite animals
+    // User inputs an animal
+    // Output is a statement with that animal
+    const enterAnimal = document.querySelector('.animalInput');
+    const animalText = document.querySelector('p.animalText');
+    enterAnimal.onchange = function() {
+        let animal = enterAnimal.value;
+        animalText.textContent = animal + " is my favourite animal!";
     }
   </script>
 </body>
