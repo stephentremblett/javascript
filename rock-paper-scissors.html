@@ -25,30 +25,35 @@
       }
 
       function playRound(playerSelection, computerSelection) {
-        let win = "Hah! You win!";
-        let tie = "Tie! Try again!";
-        let loss = "Aw, you lose!";
-        let statement = " You picked "  + playerSelection.toLowerCase() + " and the computer picked " + computerSelection.toLowerCase() + ".";
-        if (playerSelection.toLowerCase() == computerSelection.toLowerCase()) {
+        playerSelection = playerSelection.toLowerCase();
+        computerSelection = computerSelection.toLowerCase();
+        const win = "Hah! You win!";
+        const tie = "Tie! Try again!";
+        const loss = "Aw, you lose!";
+        let statement = " You picked "  + playerSelection + " and the computer picked " + computerSelection + ".";
+        if (playerSelection == computerSelection) {
             return tie + statement;
         }
-        if (playerSelection.toLowerCase() == "scissors" && computerSelection.toLowerCase() == "paper") {
+        if (playerSelection == "scissors" && computerSelection == "paper") {
             return win + statement;
         }
-        if (playerSelection.toLowerCase() == "scissors" && computerSelection.toLowerCase() == "rock") {
+        if (playerSelection == "scissors" && computerSelection == "rock") {
             return loss + statement;
         }
-        if (playerSelection.toLowerCase() == "rock" && computerSelection.toLowerCase() == "scissors") {
+        if (playerSelection == "rock" && computerSelection == "scissors") {
             return win + statement;
         }
-        if (playerSelection.toLowerCase() == "rock" && computerSelection.toLowerCase() == "paper") {
+        if (playerSelection == "rock" && computerSelection == "paper") {
             return loss + statement;
         }
-        if (playerSelection.toLowerCase() == "paper" && computerSelection.toLowerCase() == "rock") {
+        if (playerSelection == "paper" && computerSelection == "rock") {
             return win + statement;
         }
-        if (playerSelection.toLowerCase() == "paper" && computerSelection.toLowerCase() == "scissors") {
+        if (playerSelection == "paper" && computerSelection == "scissors") {
             return loss + statement;
+        }
+        if (playerSelection !== "paper" || "rock" || "scissors") {
+            return "Try typing again."
         }
       }
 
