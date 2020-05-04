@@ -15,7 +15,30 @@
 </head>
 <body>
   <script>
-    
+    function add7(number) {
+        console.log(number + 7)
+    }
+    add7(2);
+
+    function multiply(first, second) {
+        console.log(first * second);
+    }
+    multiply(3,2);
+
+    // Type something into prompt
+    // Take it and turn it into lowercase with first character capitazlied
+    // Start with the prompt to ask for text
+    let string = prompt("Type something");
+    // Function to do the work
+    function capitalize(string) {
+        // Convert string to lowercase
+        lower = string.toLowerCase();
+        // Take first character, uppercase it, then combine with rest of string after (slice after first character)
+        full = lower.charAt(0).toUpperCase() + lower.slice(1);
+        // Log it!
+        console.log(full);
+    }
+    capitalize(string);
   </script>
 </body>
 </html>
