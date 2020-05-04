@@ -15,6 +15,10 @@
 </head>
 <body>
   <script>
+      const win = "Hah! You win!";
+      const tie = "Tie! Try again!";
+      const loss = "Aw, you lose!";
+
       function computerPlay() {
           let choice = [
               "Rock",
@@ -25,41 +29,57 @@
       }
 
       function playRound(playerSelection, computerSelection) {
+        computerSelection = computerPlay()
         playerSelection = playerSelection.toLowerCase();
         computerSelection = computerSelection.toLowerCase();
-        const win = "Hah! You win!";
-        const tie = "Tie! Try again!";
-        const loss = "Aw, you lose!";
         let statement = " You picked "  + playerSelection + " and the computer picked " + computerSelection + ".";
         if (playerSelection == computerSelection) {
             return tie + statement;
         }
-        if (playerSelection == "scissors" && computerSelection == "paper") {
+        if (
+            playerSelection == "scissors" && computerSelection == "paper" ||
+            playerSelection == "rock" && computerSelection == "scissors" ||
+            playerSelection == "paper" && computerSelection == "rock"
+            ) {
             return win + statement;
         }
-        if (playerSelection == "scissors" && computerSelection == "rock") {
-            return loss + statement;
-        }
-        if (playerSelection == "rock" && computerSelection == "scissors") {
-            return win + statement;
-        }
-        if (playerSelection == "rock" && computerSelection == "paper") {
-            return loss + statement;
-        }
-        if (playerSelection == "paper" && computerSelection == "rock") {
-            return win + statement;
-        }
-        if (playerSelection == "paper" && computerSelection == "scissors") {
+        if (
+            playerSelection == "scissors" && computerSelection == "rock" ||
+            playerSelection == "rock" && computerSelection == "paper" ||
+            playerSelection == "paper" && computerSelection == "scissors"
+            ) {
             return loss + statement;
         }
         if (playerSelection !== "paper" || "rock" || "scissors") {
             return "Try typing again."
         }
       }
-
-      const playerSelection = prompt("Do you choose rock, paper, or scissors??");
-      const computerSelection = computerPlay();
-      console.log(playRound(playerSelection,computerSelection))
+      
+      function game() {
+          let playerPts = 0;
+          let computerPts = 0;
+          for (let i = 0; i < 5; i++) {
+              let playerSelection = prompt("Choose: rock, paper, or scissors");
+              let computerSelection = computerPlay();
+              let results = playRound(playerSelection, computerSelection);
+              console.log(results);
+              if (results.indexOf("win") != -1 ){
+                playerPts++;
+              } else if (results.indexOf("lose") != -1 ) {
+                computerPts++;
+              }
+          }
+          let final = " The final score was Player: " + playerPts + " vs Computer: " + computerPts;
+          if (playerPts > computerPts ) {
+              console.log("Congratulations you win!" + final);
+          } else if (playerPts < computerPts) {
+              console.log("Unfortunately you have lost." + final);
+          } else {
+              console.log("Oh wow, it was a tie!" + final);
+          }
+      }
+      
+      console.log(game());
   </script>
 </body>
 </html>
